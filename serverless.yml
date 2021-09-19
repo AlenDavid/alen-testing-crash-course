@@ -6,7 +6,7 @@ provider:
 
 functions:
   hello:
-    handler: src/routes/auth/login
+    handler: src/routes/auth/login.default
     events:
       - http:
           path: /auth/login
