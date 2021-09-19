@@ -1,0 +1,22 @@
+service: aws-e2e-expenses
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  hello:
+    handler: src/routes/auth/login
+    events:
+      - http:
+          path: /auth/login
+          method: POST
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true # otherwise will be /api/{STAGE}/{lambda*}
+    prefix: api # to make url like /api/{lambda*}
+    httpPort: ${env:PORT, 3000}
