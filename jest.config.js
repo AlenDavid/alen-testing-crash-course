@@ -31,7 +31,7 @@ module.exports = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: 'v8'
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -96,7 +96,14 @@ module.exports = {
   // preset: undefined,
 
   // Run tests from one or more projects
-  // projects: undefined,
+  projects: [
+    {
+      displayName: 'unit tests',
+      testMatch: ['<rootDir>/src/**/*.+(spec|test).[jt]s']
+    },
+    '<rootDir>/tests/integration/jest.config.js',
+    '<rootDir>/tests/e2e/jest.config.js'
+  ]
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
