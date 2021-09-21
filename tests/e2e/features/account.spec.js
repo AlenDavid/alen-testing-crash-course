@@ -1,20 +1,18 @@
-const supertest = require('supertest')
-
-const url = 'http://localhost:3000/api'
-
-const server = supertest(url)
+const server = require('../server')
 
 describe('Account', () => {
-  test('POST /account/create', (done) => {
-    const errors = {
-      email: ['The email field is required.'],
-      password: ['The password field is required.']
-    }
+  describe('POST /account/create', () => {
+    it('should fail if nothing is provided', (done) => {
+      const errors = {
+        email: ['The email field is required.'],
+        password: ['The password field is required.']
+      }
 
-    server
-      .post('/account/create')
-      .expect(400)
-      .expect({ errors })
-      .end(done)
+      server
+        .post('/account/create')
+        .expect(400)
+        .expect({ errors })
+        .end(done)
+    })
   })
 })
