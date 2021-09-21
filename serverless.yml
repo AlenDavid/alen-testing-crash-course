@@ -5,7 +5,7 @@ provider:
   runtime: nodejs14.x
 
 functions:
-  hello:
+  login:
     handler: src/routes/auth/login.default
     events:
       - http:
