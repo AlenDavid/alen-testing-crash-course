@@ -7,7 +7,9 @@
     "start": "serverless offline",
     "test": "jest src/*",
     "test:integration": "jest tests/integration/*",
-    "test:e2e": "jest tests/e2e/*"
+    "test:e2e": "jest tests/e2e/*",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
