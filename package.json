@@ -4,6 +4,7 @@
   "description": "by David Alen.",
   "main": "index.js",
   "scripts": {
+    "start": "serverless offline",
     "test:e2e": "jest e2e/**"
   },
   "keywords": [],
