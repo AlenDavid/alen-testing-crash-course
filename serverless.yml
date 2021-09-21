@@ -5,6 +5,12 @@ provider:
   runtime: nodejs14.x
 
 functions:
+  account-create:
+    handler: src/routes/account/create.default
+    events:
+      - http:
+          path: /account/create
+          method: POST
   login:
     handler: src/routes/auth/login.default
     events:
